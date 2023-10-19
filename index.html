@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Wandering Earl</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+            <!-- fav icon -->
+
+<link rel="icon" type="image/png"
+href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAA3lBMVEX///8eNlwAKFMAIE8WMVkAIlAIKlWQl6ZQX3sAJlINLFYAH089TWwaM1oAJFEAGkz19vicpLKiqbbj5uru7/Krsb1fbYXGytPO0tmyuMKDi518hpnb3uSHkKEAF0tWY30xRWcAFEq9wsrpSCvnMQArQWVrd40AD0hIWHVDVHJzf5MjO2CUnaz+9fToQB/86uf3x8H0q6H73dgABkb51M/zqJ7xk4btbFjrXETqUznynZHoNgn629b1vbcACUbpRCP3wrrwi33vgHDudmPsZU/ymIrvgXHsb13wjX7nIAARqHT+AAAL8UlEQVR4nO2caXfbthKGuUskxUWiFmpfEq1WnJu4Tdq6WZrkJu3//0OXMwOQIC0pbU98bfrM8yEKKQCcF8sMCEDWNIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGIZhGObREieTJIkvpxnvms3mriEvB/tmc9+VV/0mfDmUl81SUk3rYN5Vfn2E61aWe7VvIvNNO1WetWsq7HqaNszv9EfD3NAxfh2fKX+fyMtue2/5vu/q894lkR3TAvLSXcvypaQEv5tNpPoIkxalNcLs0tPzG6Mss7XNFA59i/AMU2/k39uWgt3OHl7c8WxP1l3fya6NWJRvuYV0KN+XChuGG+hAYIVe57zCJIJEkczWyjJ5B3GxsiH/QiadW5A07BUKHbjhyOTayIOiQGGo5wSGJVvB0BUMUKjeCeymUAjP8WJZvrcplR+Sqd19qOY1m+ebETTpoWi2xITkV2qJ3rhUF7q1ryjU/VRNX1WYlRc1LioMAmoL3d2cUqjPSuWTwu7aE4WLvN4iH1tVSjLINFv0ywXkNmULiOfpvuy18k7eyhWFnusKM/xGoTCwTeS9VBi0di3PxXTR5JTCco2Twj2V7Jn6lRuCmYGbm1VlgM2m08UGM7rUEbtkp2x+R9aWbNRcszs9pdBrrHobhyyJhlJhsEsFiVBoZqbF1JpO45RC3VDLR4XTkCprNInj7nDh6IF/VqAWY/XNqI3XqMLq4wUOQ2su0q1M2b9yXyMtkM1aVmgPoJY2NtridYVCUTZBCrETTiGv1TypUJ8p5YNCMWCMgShnY0QD7TxYIA3EiS+aqSjQkF4K/YyFg1b6mtwCMTZPKJTVjc1gqDVWUZiaeX+/q9BqlRXif3S/iCP7nnaBjpt3vQ4NB/FQbFDZ+skSUh1gaAatqkI9bJ9VSFWDw+CSQqxcKvmuQt0uygeFNHw2RUGXgz42OY1migfk57RuKVbg06LJET6k8yQLMI+dnFU4wX4KeS710p6bG11RiOX7efmZQupq0fmRVwVdJgzEWLpea6eJYZi7FYcaD8OJDJhogdMJ5Qg6rZDiEfR29DSL0Rg5dFWFiV70/7JCr2OWys8UYm3kPelvQBmzTp1C3ayv4KmxuG2Lvo5y3czKHTzeiAuFfvcACWEidEZhHo8oWnjETPpSb9xu9CPy+PFdhWaC5Zu9QiEpp06ajKaSUXpHmgDjBVgAXdBpwwPAOhyGcsrUtKTxUmquMKGmD+NzCtuGMKgU8W2pUPcch0bHjOYdFYUT6j9ON1dIVTbCxOnWk8yGVWWS2BcDbm+BZ4HHelOt6yt+IZnBBdRaDO7UWqgKtRWMZK//bxUKrKVw23cUrnwqQCqcKpOUNA9i+cTsBFjkrBt76HHA82R6sV/KWIFl2mne58g7SIVaH6Wl09MKD7LKqZeGxE2ukAa/1Z+o5qgKqXx/MBUK0d0Jl5VGQSCmfRcUYpAIVwObqho8TxSTueKpHhThHNvHY/tg5YMgV9hFH7IeWycVUneXnma/IuBtiWZta0tXJ/gnFHbJteCjM4VYfLDGxJPWLqM0uT4Bxgtv2vAo1Rg+B5BJPhYHXyYRoCETdlWFWg/jNX51R+GAosXkXLQIB+jMvTxQ3lWolp8ppCmNrziWnnFZoXYFavagye6S37ToMSJWNC29AvqaQqGS4o5CtB9r/FzEn+BYcmVgOqFQKR8iPtgrpngEzqf9s75UjC3ozBgIYwxAUJqIFZOoKpAsVhQm/jmFOIZo0nN2TtPD3OY5TwPl26pCDMF6eJTloIFBcF6g6Eg41OBSTm10Oy4qQDckeAW+RlGoHd2TCtO9k1fIhTnNAV2OPzirUDvKV058t0C/oNtCYorTZWd6QaEmG4kaWjpxUd8YILK5hWQqA66qkDqjqtA6HA8t31LKJU8z7BGpOqfZo7dxkrMKtZalKFyRwW6rk6bDvk/ThbOvwEqriXdN2Stxeir8TPFWKIZBpqSkMI0qCnXL8YRVEU39KTa4xLJdmrVhq1jr+KzC1FcUamPqdYFr2iE9JLrgZ7T8pUJO16+oPUSswImaqQxjDCRuu6xQGzkVhZJ8aev0KgaVjFFd95pnFWpTQ1GobWy9RKSsAZ5CvFJKfzv2qi2aryQUd/SKQo3iblWhZbakjZcUivdIcKhnFIrXc6FQm0aKg/f8C4tthGNArNuKrrxawpVPrxAHP/t/dFRT78Ps1vu0EWUfN7nCwRZy3YBCzJ9h2OG+6D2RoxBlCtszeKjoHfMQs7e1uZ19wtwfy9/mCgdY6lI+L2352LUDy/D7uRFnGTaAtriKp3A1pUfjN9PSMB7gveFgWv6mjSkz01LMDwWu1EfLu8RAlDMVSbr09Sju4WdWzKpSfqdiSTpawKy92f6+vhoTf2dNn2GYp0B6bCsoMWVwLF/HRcLhpJz9+Kh9YXtmKNwUX7Ts7Pp9MROKb/JUrnklA3RvmV1vLy1YPzilpRY9yu/TNFVZtY3VV7AgFNuwuDBo11LhwctnqURcfsn0aLmzNgo9MRXLe2nsFrNPcQcVWrZv0gzdxo5aF4Xe+EjkE3y5AyLWizSh0BvHMe0MiBXJuig072whtMT7sHxvzxXCf+nVw4AOXBuF1TUgel0t1h21kkJ6/6RFuroqxLWvAFcOfOFrVIWt+ims9FJcwbU2uAtmiKivKsRl7lr1UqctFrJFW3aE3aBE+hpSOMq/ptXmuijUHRuZiY3FhUXLl7SfSvajwqxd09VGWe2sjUIZxsV+EPROWL7sLvV8hVTEQ98McS5g0cJPTRWin8Gxqfia8pzG82i2XRuFFu1R2qiQ/AzsD2gr6JC0kF5SGPWFh62LQqsv9uZx5beNhw4aEzgW5OTzGtFLcQnQzSXVRWE5WtD6vgdHu+xiXiN8KR3LWcj1o9ooVCP+wNcroK+R0cIrbRbWUmH/zmYjTl9kxKcXR7lZWEeF6Gf04qQshsuGMqdp436oT5s1dVEYrhJBFuXR9ez7cwJbFHY9illbH9+eTJSFCt1hkf3xQdHC9Ykb8d6g7OVRcFwpCuMFqvbymbduiOzbi1uAD0R1FQOPH6kbvXRjrs68J7S9CA6156rZvTooxF5prpQU2Kh2or5bDHEogkOtg0L1AH7gd/0APtXtkgacsHen2hJO4AsXOsZT+OZY65XO7xuPUWFv0VJYdOByUTozMMEU++6V+s0ck1+thuXsj1Eh80N48dAG3DuvXj60BffOsyffiq8+PHmJ178+dYnvnj95ic+efCu+u/3wBCW+ELwEnj378Mu9SnzxovRQ8VjJa8Hvv/+U8R/g48eP75BXxM/Abxn/ffPmzZ9//PH166dPnz5//vz27dsvX778kvEr8EzwgbjOye5d/3iJqEPaLQ2XVqO9mbl/CnMzaz9/+/atZDHZen19e3v7HPkLeX6C2yrXZaCo5+9+tMIfTan9qc1fv3xdrcKP70qVmNUiVGJWW7evHlrAffLy+okL1L5eP3GBr2+fuEDt0/MnLvD1Xz8/tAn3zNtHInDcpFXgXappk8NCbx1gx6azw901+Eh3uEg8gpXSeLq3rubfPYCO/PTbPVr9T+h7emBZegC/81lG+k6PtitNayxxga0xG8Nf1sgShP4yq4K1v58e7O13fkRAfLxXs/8ZaYQ/XE9meKjrGG67WsNHhcfsY+DjabZDONcGM0g4sHcPZ+u/Y0AKpzateu/sRlnhAhNlQlfRup5n0IXCpthaapv9E224MQ9abLn+pvP3f3D+aBAKd+LvHfTMZqYQD9GgQjuIIj8K111N646N7XZpXfjN4ONEKJyX2rBQaF71+618AzgZ7rxt3fqqUNiwScXebmttHw/vHfwGjcPYgN/qxROUto7q1ohCYeLjkaeG7cdaOnMyFakzGwhP04N/+zdwfiq2tnUbioMlnW4eziJ9H8zwj6psIrPV8uFE2GCJB0/2s6k2Cf2r/tyJ+pdKe4ykTXGeNBnv1zvxK6zefNHqD4tvJ/NmoiXT3XrRv/hXVxiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiGYRiG+T/yPwWcKUIdx/CHAAAAAElFTkSuQmCC">
+</head>
+<nav class="navbar navbar-expand-sm navbar-dark">
+    <div class="container-fluid">
+        
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/White_square_50%25_transparency.svg/768px-White_square_50%25_transparency.svg.png" alt="" width="10%" height="1%">
+        <img src="https://www.wanderingearl.com/wp-content/uploads/2018/10/Wandering-Earl-Travel-Blog-Life-of-Travel.png" alt="" >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse ml-auto contents" id="collapsibleNavbar">
+            <ul class="navbar-nav me-5 ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">TravelResources</a>
+                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Tours</a>
+                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="#">Contact</a>
+                                                </li>
+                            
+                                 <li class="nav-item">
+                             <a class="nav-link" href="#"><i class="fa-brands fa-facebook fa-xl"></i></a>
+                              </li>          
+
+                               <li class="nav-item">
+                         <a class="nav-link" href="#"><i class="fa-brands fa-twitter fa-xl" style="color: #25a9cb;"></i></a>
+                <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-brands fa-youtube fa-xl" style="color: #c5263d;"></i></a>
+                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-brands fa-instagram fa-xl"></i></a>
+                    </li>                                                                                                                           </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass fa-sm"></i></a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<body>
+    <div class="landing-container">
+        <img src="https://www.wanderingearl.com/wp-content/uploads/2018/08/Wandering-Earl-Sahara-Desert.jpg" alt="">
+        <div class="landing-text">
+            <h1 style="color: rgb(247, 233, 106);"><b>WELCOME! <br> I'M EARL</b></h1>
+            <p class="text-light fs-3"><b>Travel is my life. Since 1999, I’ve been traveling around the world nonstop. If you also love travel, you’re in the
+            right place!</b>
+        <br>
+        <br>
+    <b>Let’s get started…</b></p>
+    <br><br>
+    <button>BROWSE THE BLOG</button>
+    <button>TRAVEL RESOURCES</button>
+
+        </div>
+    </div>
+<div class="info-container">
+    <div class="info"><h3>133<br>Countries Visited </h3></div>
+    <div class="info"><h3>USA <br>Where Am I?</h3></div>
+    <div class="info"><h3>8146 <br> Days On The Road</h3></div>
+</div>
+<div class="subscribe-container">
+<img src="https://www.wanderingearl.com/wp-content/uploads/2018/10/Wandering-Earl-mapbg-3.png" alt="">
+<div class="subscribe-text">
+    <h1>Join 22,000+ people and get your weekly travel inspiration.
+</h1>
+<br>
+<h3>New blog posts, honest updates from my 21 years of constant travel, personal recommendations and the best of travel from
+around the world.
+</h3>
+<br>
+<form>
+    <input type="text" placeholder="Name" class="input">
+    <input type="text" placeholder="Email Address" class="input">
+    <button>Subscribe</button>
+</form>
+</div>
+</div>
+
+<div class="container d-flex justify-content-around" style="margin-top: 50px;">
+<div class="card" style="width: 21rem;">
+    <img src="https://www.wanderingearl.com/wp-content/uploads/2018/08/Travel-Resources-image.jpg" class="card-img-top" alt="...">
+    <div class="card-body bg-dark">
+        <h3 class="card-text text-warning">Travel Resources</h3>
+        <p class="card-text text-light">
+        Planning, working abroad and more
+</p>
+    </div>
+</div>
+
+
+<div class="card" style="width: 21rem;">
+    <img src="https://www.wanderingearl.com/wp-content/uploads/2018/08/blog-posts-bg.jpg" class="card-img-top" alt="...">
+    <div class="card-body bg-dark">
+        <h3 class="card-text text-warning">Blog Posts</h3>
+        <p class="card-text text-light">
+            All things travel, by category
+        </p>
+    </div>
+</div>
+
+
+<div class="card" style="width: 21rem;">
+    <img src="https://www.wanderingearl.com/wp-content/uploads/2018/10/Wandering-Earl-Home-Travel-Email-Image.jpg" class="card-img-top" alt="...">
+<div class="card-body bg-dark">
+    <h3 class="card-text text-warning">The Newsletter</h3>
+    <p class="card-text text-light">
+        Join over 21,000+ other travelers
+    </p>
+</div>
+</div>
+
+</div>
+
+
+<div class="container d-flex justify-content-around" style="margin-top: 50px;">
+    <div class="card" style="width: 21rem;">
+        <img src="https://www.wanderingearl.com/wp-content/uploads/2018/08/How-to-Work-on-a-Cruise-Ship-Guide.jpg" class="card-img-top" alt="...">
+<div class="card-body bg-dark">
+    <h3 class="card-text text-warning">Work On A Cruise Ship</h3>
+    <p class="card-text text-light">
+        My guide on how to work on a cruise ship
+    </p>
+</div>
+    </div>
+
+
+    <div class="card" style="width: 21rem;">
+        <img src="https://www.wanderingearl.com/wp-content/uploads/2018/08/PSX_20180315_000413.jpg" class="card-img-top" alt="...">
+<div class="card-body bg-dark">
+    <h3 class="card-text text-warning">Travel Advices And Itineraris</h3>
+    <p class="card-text text-light">
+        20 years of travel experience all over the world
+    </p>
+</div>
+    </div>
+
+
+    <div class="card" style="width: 21rem;">
+        <img src="https://www.wanderingearl.com/wp-content/uploads/2018/08/tours-bg-1.jpg" class="card-img-top" alt="...">
+        <div class="card-body bg-dark">
+            <h3 class="card-text text-warning">Wandering Earl Tours</h3>
+            <p class="card-text text-light">
+                Unique small trips to great destinations
+            </p>
+        </div>
+    </div>
+
+</div>
+<br><br><br>
+<h1 class="text-center">POPULAR READS</h1>
+<div class="reads">
+    <div class="reads-col">
+        <h2>Most Viewed</h2>
+    
+        <p class="fs-4">
+            <a href="">42 Ways You Can Make Money and Travel the World</a>
+            <br>
+            
+            <a href=""> Please Help Me Find A Home!</a>
+            <br>
+            <a href="">Please Don’t Be Afraid To Travel On Your Own</a>
+            <br>
+            <a href=""> How I Can Afford My Life Of Constant Travel</a>
+            <br>
+        <a href="">  Let’s Get To Know Each Other Better</a>
+        <br>
+            <a href=""> The Day US Customs Found A Bullet In My Pocket</a><br>
+
+            <a href=""> How Much Money Do You Need To Start A Life Of Travel?</a>
+            <br>
+            <a href=""> Living Abroad For Less Than $1000 Per Month</a>
+        </p>
+    
+    </div>
+    <div class="reads-col">
+     <h2>Most Recent</h2>
+
+        <p class="fs-4">
+         <a href="">Obtain An International Driving Permit from IDA</a>
+         <br>
+         <a href="">Travel with Ease: Discover the Benefits of Reliefband</a>
+         <br>
+         <a href="">Air Turbulence: The Older I Get, The More It Makes Me Cry</a>
+         <br>
+         <a href="">Experiencing the Best of Paris: A Traveler’s Guide
+
+
+         </a>
+         <br>
+         <a href="">Active Holiday Ideas in the French Alps for Solo Travelers
+</a>
+<br>
+         <a href="">
+            Most Scenic Villages in Germany
+         </a>
+         <br>
+         <a href="">
+Two Weeks in Kyoto: Everything You Need to Know
+         </a><br>
+         <a href="">How to Prepare for Life as a Digital Nomad</a>
+        </p>
+     
+
+    </div>
+</div>
+<br><br>
+<h1 class="text-center">Highlighted Post</h1>
+<br><br>
+<p class="text-center fs-4" >
+    <a href="">Affordable Canadian Cities For Digital Nomads</a>
+    <br>
+    <a href="">Top Alternative Destinations to Visit Across Europe
+</a>
+</p>
+<br><br>
+<hr><hr>
+<h1 class="text-center mt-5">AS SEEN IN</h1>
+<img src="https://www.wanderingearl.com/wp-content/uploads/2019/12/Wandering-Earl-Media.png" alt="" style="margin-left: auto;margin-right: auto;display: block;margin-top: 50px;">
+<br><br>
+</body>
+<footer class="bg-dark text-center text-lg-start">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <p class="text-secondary fs-5">Copyright 2023 Wandering Earl, LLC</p>
+        <a class="text-light" href="https://mdbootstrap.com/">Privacy Policy</a>
+        <br>
+        
+        
+        <p class="text-secondary">*As an Amazon Associate I earn from qualifying purchases. Certain other links on this site might earn me a commission if
+        a product/service is purchased.</p>
+    </div>
+    <!-- Copyright -->
+</footer>
+</html>
